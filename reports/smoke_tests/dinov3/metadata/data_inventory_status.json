@@ -1,0 +1,6 @@
+{
+  "data_root": "/kaggle/input/datasets/obulisainaren/retinal-oct-c8",
+  "total": 24000,
+  "matches_proposal_counts": true,
+  "full_image_audit_done": false
+}

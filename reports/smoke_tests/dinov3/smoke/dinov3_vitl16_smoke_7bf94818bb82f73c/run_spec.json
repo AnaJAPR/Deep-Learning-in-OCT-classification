@@ -1,0 +1,130 @@
+{
+  "model_id": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+  "revision": "ea8dc2863c51be0a264bab82070e3e8836b02d51",
+  "size": [
+    224,
+    224
+  ],
+  "resize": "PIL_BICUBIC_whole_image",
+  "processor": {
+    "_processor_class": null,
+    "crop_size": null,
+    "data_format": "channels_first",
+    "default_to_square": true,
+    "device": null,
+    "disable_grouping": null,
+    "do_center_crop": null,
+    "do_convert_rgb": null,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_processor_type": "DINOv3ViTImageProcessorFast",
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "input_data_format": null,
+    "resample": 2,
+    "rescale_factor": 0.00392156862745098,
+    "return_tensors": null,
+    "size": {
+      "height": 224,
+      "width": 224
+    }
+  },
+  "feature": "last_hidden_state_cls_token",
+  "dimension": 1024,
+  "amp_dtype": "float16",
+  "batch_size": 2,
+  "transformers": "4.56.2",
+  "torch": "2.11.0+cu128",
+  "seed": 17,
+  "images": [
+    {
+      "image_id": "9f612e696b9754ea7a03",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/AMD/amd_train_3139.jpg",
+      "sha256": "b6b946f4c63bedac793f3a1472863bec7eb5d518ee7a9742ab69243f19e170e1"
+    },
+    {
+      "image_id": "660872559fc11749e317",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/AMD/amd_train_2697.jpg",
+      "sha256": "3d4bbea466910371f43f2be7e55f10dc187537d437bbec2252a9b6859b90164f"
+    },
+    {
+      "image_id": "5ed89053187dcd300791",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/CNV/cnv_train_2243.jpg",
+      "sha256": "34f08c2b74f4fd46e0038dd1fa5fed8b86ef0219a798b9bea3e3b86a8588b8b5"
+    },
+    {
+      "image_id": "2b02b31548ffc4a4c906",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/CNV/cnv_train_2498.jpg",
+      "sha256": "1ab850c61a2508ef4c67c143b9f34b5b9dce3234dfd539b36ba88b72ba0abbec"
+    },
+    {
+      "image_id": "0ad93d6c20f0655abf5d",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/CSR/csr_train_2187.jpg",
+      "sha256": "3c9d2972955bc5c80b2c928e32de6269d108da140221084ea08094735008a68c"
+    },
+    {
+      "image_id": "9625e547486463b71163",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/CSR/csr_train_1716.jpg",
+      "sha256": "7068ddc71f0916b24fbdd7747b2bf650520c20bdc5efd3253b913372cf5dd26b"
+    },
+    {
+      "image_id": "a2bfd110f8a54f3b3c88",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DME/dme_train_3213.jpg",
+      "sha256": "312ae8d95195cee1f85fdd81870578be021fba674128cb1ae9f6255b9cf91891"
+    },
+    {
+      "image_id": "9a244ab4efeed3f73d05",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DME/dme_train_2140.jpg",
+      "sha256": "316bf97cf074f1792e23e066eb988707279a06e9092cbce89d2a619cdce222f7"
+    },
+    {
+      "image_id": "1c8a6060680f08d2f577",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DR/dr_train_1452.jpg",
+      "sha256": "b6435ff36445009f1c920de4e5a07bbf7a0f357e44ae518e88c3c9b011972f66"
+    },
+    {
+      "image_id": "9b266743a51c932d3a6e",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DR/dr_train_1111.jpg",
+      "sha256": "ce7586403a9a712ac1d1dcaf6aaffc71a752533395991f425d37062138f60e0e"
+    },
+    {
+      "image_id": "b7eb9993e709bb9c4e91",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DRUSEN/drusen_train_2020.jpg",
+      "sha256": "7941690242b58ccc048b8f67c775cfc60617c746f24aafd4d016f19b2def7f13"
+    },
+    {
+      "image_id": "8e62f0649fec061c8fbe",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/DRUSEN/drusen_train_2574.jpg",
+      "sha256": "cd8a61448a1379870194be5b7d55ab9715ae9627ea2a787968e9342446831d66"
+    },
+    {
+      "image_id": "87ddd828b6c044d34de0",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/MH/mh_train_2719.jpg",
+      "sha256": "7bf4711d10f1e0f42266f0342cec7889d082211c4e184c0ea293a9b02b99c13f"
+    },
+    {
+      "image_id": "7aa7d7aca3e366546a0b",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/MH/mh_train_2034.jpg",
+      "sha256": "d7e7ed24c4d758182243af24f3f76264840c05617ea8aaf08bead95f78cc1a35"
+    },
+    {
+      "image_id": "b198877eeb0fe87ac297",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/NORMAL/normal_train_3055.jpg",
+      "sha256": "467773cdad04971e295634b4a0ac63eca4b31438ec2a62b8dcfa6a157e697193"
+    },
+    {
+      "image_id": "37ec321ccd10de4294b3",
+      "relative_path": "RetinalOCT_Dataset/RetinalOCT_Dataset/train/NORMAL/normal_train_2301.jpg",
+      "sha256": "49a1e6418940419818f2ff4d5df02949e207e70fd9a0c9b5acadf3d20c10644a"
+    }
+  ]
+}

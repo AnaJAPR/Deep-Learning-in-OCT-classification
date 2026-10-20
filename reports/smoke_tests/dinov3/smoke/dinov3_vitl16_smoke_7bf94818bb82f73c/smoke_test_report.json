@@ -1,0 +1,27 @@
+{
+  "completed": true,
+  "shape": [
+    16,
+    1024
+  ],
+  "same_session_resume_verified": true,
+  "restored_previous_directory": false,
+  "first_pass": {
+    "new_chunks": 2,
+    "reused_chunks": 0,
+    "seconds": 1.534,
+    "peak_memory_gib": 1.157
+  },
+  "resume_pass": {
+    "new_chunks": 6,
+    "reused_chunks": 2,
+    "seconds": 0.365,
+    "peak_memory_gib": 1.157
+  },
+  "verification_pass": {
+    "new_chunks": 0,
+    "reused_chunks": 8,
+    "seconds": 0.009,
+    "peak_memory_gib": 1.139
+  }
+}

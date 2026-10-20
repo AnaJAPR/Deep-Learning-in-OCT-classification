@@ -1,0 +1,49 @@
+# Dados e artefatos locais
+/data/
+/artifacts/
+/cache/
+/outputs/
+/oct_project/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.joblib
+*.pkl
+*.zip
+*.tar
+*.tar.gz
+
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+kaggle.json
+credentials*.json
+token*.json
+configs/local/
+
+# Python e notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Compilação do relatório
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
