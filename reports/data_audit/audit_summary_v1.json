@@ -1,0 +1,13 @@
+{
+  "audited_at_utc": "2026-10-21T00:13:14.363391+00:00",
+  "total_images": 24000,
+  "readable_images": 24000,
+  "images_needing_review": 0,
+  "identical_file_groups": 144,
+  "identical_pixel_groups": 144,
+  "images_in_cross_split_duplicate_groups": 96,
+  "images_with_duplicate_label_conflicts": 12,
+  "patient_separation_verified": false,
+  "pretraining_independence_verified": false,
+  "data_frozen": false
+}
