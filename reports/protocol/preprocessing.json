@@ -1,0 +1,25 @@
+{
+  "size": [
+    224,
+    224
+  ],
+  "color": "RGB",
+  "resize": "PIL_BICUBIC_whole_image",
+  "crop": false,
+  "aspect_ratio_preserved": false,
+  "augmentation_frozen_features": false,
+  "normalization": {
+    "dinov3_vitl16": {
+      "mean": null,
+      "std": null,
+      "checkpoint_revision": null,
+      "evidence": null
+    },
+    "retfound_mae_oct": {
+      "mean": null,
+      "std": null,
+      "checkpoint_revision": null,
+      "evidence": null
+    }
+  }
+}

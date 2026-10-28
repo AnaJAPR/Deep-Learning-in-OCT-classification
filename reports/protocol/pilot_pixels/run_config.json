@@ -1,0 +1,11 @@
+{
+  "purpose": "technical_pixel_pilot_not_model_result",
+  "C": 1.0,
+  "seed": 17,
+  "fraction": 0.01,
+  "manifest_sha256": "80d6eedc883410b47beeee6b1c72e72d69309ba38ac2595fc8f2590e6928103d",
+  "data_status": "provisional",
+  "feature": "RGB224_then_BOX8x8_flatten_div255",
+  "scaler_fit": "train_only",
+  "test_used": false
+}

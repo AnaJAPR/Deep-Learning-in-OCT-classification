@@ -1,0 +1,54 @@
+{
+  "status": "draft_for_joint_review",
+  "data_status": "provisional",
+  "manifest_sha256": "80d6eedc883410b47beeee6b1c72e72d69309ba38ac2595fc8f2590e6928103d",
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "percentages": [
+    1,
+    5,
+    10,
+    25,
+    100
+  ],
+  "rounding": "max(1,floor(class_train_n*pct/100))",
+  "nested": true,
+  "primary_metric": "macro_f1",
+  "selection_split": "val",
+  "test_for_final_only": true,
+  "frozen_linear": {
+    "C": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "standard_scaler_fit": "subset_train_only",
+    "tie_break": "smallest_C",
+    "max_trials": 5
+  },
+  "neural_budget_proposal": {
+    "max_trials": 5,
+    "max_epochs": 30,
+    "early_stopping_patience": 5
+  },
+  "full_data_deterministic_repeats": 1,
+  "validation_annotation_count": 2793,
+  "test_annotation_count": 2797,
+  "normalization_pending": [
+    "dinov3_vitl16",
+    "retfound_mae_oct"
+  ],
+  "limitations": [
+    "patient_separation_unverified",
+    "pretraining_independence_unverified",
+    "near_duplicates_not_excluded",
+    "resize_changes_aspect_ratio"
+  ]
+}
