@@ -1,0 +1,47 @@
+[
+  {
+    "C": 0.001,
+    "valid": true,
+    "warnings": [
+      "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    ],
+    "seconds": 4.860908537999876,
+    "validation_macro_f1": 0.8053677926459223
+  },
+  {
+    "C": 0.01,
+    "valid": true,
+    "warnings": [
+      "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    ],
+    "seconds": 9.149625461999676,
+    "validation_macro_f1": 0.822995551572592
+  },
+  {
+    "C": 0.1,
+    "valid": true,
+    "warnings": [
+      "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    ],
+    "seconds": 3.0318986719998975,
+    "validation_macro_f1": 0.8239438964359624
+  },
+  {
+    "C": 1.0,
+    "valid": true,
+    "warnings": [
+      "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    ],
+    "seconds": 0.9169876370001475,
+    "validation_macro_f1": 0.8191527435393927
+  },
+  {
+    "C": 10.0,
+    "valid": true,
+    "warnings": [
+      "scipy.optimize: The `disp` and `iprint` options of the L-BFGS-B solver are deprecated and will be removed in SciPy 1.18.0."
+    ],
+    "seconds": 0.916892278999967,
+    "validation_macro_f1": 0.8125105637436774
+  }
+]

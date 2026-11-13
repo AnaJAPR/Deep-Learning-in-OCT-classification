@@ -1,0 +1,7 @@
+{
+  "C": 0.01,
+  "validation_macro_f1": 0.8445304263666362,
+  "classifier_sha256": "d9df4c8fcbc6888622bb12750cdc75639063b4e223be2b2dd06f44de5efb439a",
+  "config_hash": "c1161c2c048ca52814a61a87eff12ac4b6df46c5070414c627436e4f68560f7d",
+  "test_used_for_selection": false
+}

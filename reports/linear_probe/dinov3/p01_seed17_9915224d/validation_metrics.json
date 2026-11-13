@@ -1,0 +1,52 @@
+{
+  "n": 2793,
+  "class_order": [
+    "AMD",
+    "CNV",
+    "CSR",
+    "DME",
+    "DR",
+    "DRUSEN",
+    "MH",
+    "NORMAL"
+  ],
+  "macro_f1": 0.763201344428126,
+  "accuracy": 0.7647690655209453,
+  "balanced_accuracy": 0.7644960334793245,
+  "balanced_accuracy_scope": "classes_present",
+  "recall_per_class": {
+    "AMD": 0.9971428571428571,
+    "CNV": 0.7204610951008645,
+    "CSR": 0.8371428571428572,
+    "DME": 0.5157593123209169,
+    "DR": 0.8514285714285714,
+    "DRUSEN": 0.6005747126436781,
+    "MH": 0.8828571428571429,
+    "NORMAL": 0.7106017191977078
+  },
+  "support": {
+    "AMD": 350,
+    "CNV": 347,
+    "CSR": 350,
+    "DME": 349,
+    "DR": 350,
+    "DRUSEN": 348,
+    "MH": 350,
+    "NORMAL": 349
+  },
+  "auroc_per_class": {
+    "AMD": 0.9999976609554997,
+    "CNV": 0.940187001774349,
+    "CSR": 0.9871481199929828,
+    "DME": 0.9205269673933943,
+    "DR": 0.9899584819601193,
+    "DRUSEN": 0.9163681451707684,
+    "MH": 0.9876568621718028,
+    "NORMAL": 0.9526282715638321
+  },
+  "auroc_macro": 0.9618089388728435,
+  "auroc_macro_defined_classes": 0.9618089388728435,
+  "auroc_classes_defined": 8,
+  "balanced_support": false,
+  "accuracy_minus_balanced_accuracy": 0.00027303204162076877
+}

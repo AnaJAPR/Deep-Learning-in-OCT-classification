@@ -1,0 +1,12 @@
+{
+  "batch": 8,
+  "ok": true,
+  "n": 256,
+  "seconds": 2.9394580270000006,
+  "write_seconds": 0.19658485599995856,
+  "images_per_second": 87.09088466259632,
+  "peak_allocated_gib": 0.13443565368652344,
+  "peak_reserved_gib": 0.1796875,
+  "estimated_extraction_seconds": 292.16649515448836,
+  "budget_with_margin_seconds": 979.816443700835
+}

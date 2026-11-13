@@ -1,0 +1,35 @@
+{
+  "identity": {
+    "weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "weights_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+    "feature": "global_avgpool_flatten_before_fc",
+    "geometry_override": "whole-image bicubic224 instead of official resize232 + center crop224"
+  },
+  "preprocessing": {
+    "rgb": true,
+    "size": [
+      224,
+      224
+    ],
+    "resize": "PIL_BICUBIC_whole_image",
+    "crop": false,
+    "aspect_ratio_preserved": false,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "rescale": 0.00392156862745098,
+    "augmentations": false
+  },
+  "gpu": {
+    "name": "Tesla T4",
+    "total_gib": 14.56219482421875
+  }
+}

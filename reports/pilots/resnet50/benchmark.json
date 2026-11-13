@@ -1,0 +1,62 @@
+[
+  {
+    "batch": 2,
+    "ok": true,
+    "n": 256,
+    "seconds": 5.2177260280000155,
+    "write_seconds": 0.2060409499999878,
+    "images_per_second": 49.06351897861649,
+    "peak_allocated_gib": 0.09964942932128906,
+    "peak_reserved_gib": 0.119140625,
+    "estimated_extraction_seconds": 505.30016572382846,
+    "budget_with_margin_seconds": 1256.890215440977
+  },
+  {
+    "batch": 4,
+    "ok": true,
+    "n": 256,
+    "seconds": 3.3083260430000223,
+    "write_seconds": 0.19531782500001782,
+    "images_per_second": 77.38052316266166,
+    "peak_allocated_gib": 0.11144065856933594,
+    "peak_reserved_gib": 0.138671875,
+    "estimated_extraction_seconds": 326.4136962960975,
+    "budget_with_margin_seconds": 1024.3378051849268
+  },
+  {
+    "batch": 8,
+    "ok": true,
+    "n": 256,
+    "seconds": 2.9394580270000006,
+    "write_seconds": 0.19658485599995856,
+    "images_per_second": 87.09088466259632,
+    "peak_allocated_gib": 0.13443565368652344,
+    "peak_reserved_gib": 0.1796875,
+    "estimated_extraction_seconds": 292.16649515448836,
+    "budget_with_margin_seconds": 979.816443700835
+  },
+  {
+    "batch": 16,
+    "ok": true,
+    "n": 256,
+    "seconds": 3.076178776000006,
+    "write_seconds": 0.19911691299995482,
+    "images_per_second": 83.22013076654798,
+    "peak_allocated_gib": 0.18082237243652344,
+    "peak_reserved_gib": 0.236328125,
+    "estimated_extraction_seconds": 305.13985227597294,
+    "budget_with_margin_seconds": 996.6818079587649
+  },
+  {
+    "batch": 32,
+    "ok": true,
+    "n": 256,
+    "seconds": 3.0322122080000327,
+    "write_seconds": 0.22975255500000458,
+    "images_per_second": 84.42680869253898,
+    "peak_allocated_gib": 0.27603673934936523,
+    "peak_reserved_gib": 0.3671875,
+    "estimated_extraction_seconds": 303.8978890529332,
+    "budget_with_margin_seconds": 995.0672557688131
+  }
+]
