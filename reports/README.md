@@ -140,3 +140,35 @@ os registros originais e documentar o mapeamento de caminhos.
 - Diferenças entre modelos envolvem arquitetura, dados, escala e
   objetivo de pré-treinamento.
 - Os resultados atuais não incluem avaliação externa.
+
+
+
+
+
+### Ajuste parcial do DINOv3 — 10% do treino, semente 17
+
+Foram utilizadas 1.824 imagens de treino e 2.793 de validação.
+O ajuste alterou somente os dois últimos blocos do DINOv3 e a
+camada classificadora: 25.202.696 parâmetros treináveis.
+
+Foram comparadas as taxas 1e-5 e 3e-5, com limite de 15 épocas
+e parada após cinco épocas sem melhora na validação.
+
+| Taxa | Épocas executadas | Melhor época | Macro-F1 de validação |
+|---|---:|---:|---:|
+| 1e-5 | 15 | 12 | 0,902925 |
+| 3e-5 | 13 | 8 | 0,919664 |
+
+A configuração selecionada foi lr=3e-5, com o checkpoint da época 8.
+Ela apresentou accuracy de 0,920158, balanced accuracy de 0,919962
+e AUROC macro de 0,993183.
+
+DRUSEN teve o menor recall (0,772989), seguida por DME (0,851003)
+e CNV (0,853026).
+
+Os tempos registrados por época, somados, foram aproximadamente
+26,9 minutos para lr=1e-5 e 23,6 minutos para lr=3e-5.
+Esses tempos não representam toda a duração da sessão.
+
+Os resultados são de validação e correspondem a uma única semente.
+A avaliação final no teste ainda não foi executada.

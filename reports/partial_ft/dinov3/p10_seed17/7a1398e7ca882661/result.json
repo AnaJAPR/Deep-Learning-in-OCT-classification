@@ -1,0 +1,8 @@
+{
+  "best_epoch": 12,
+  "validation_macro_f1": 0.9029254343807214,
+  "epochs_completed": 15,
+  "limit_reached": true,
+  "improved_at_limit": false,
+  "best_sha256": "1d3c93208599e2de6d582c4bba516f855b698aeed1eb0de3d781683b96a05f14"
+}
