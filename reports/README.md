@@ -1,33 +1,35 @@
+<!-- reports/README.md -->
+
 # Relatórios dos experimentos OCT-C8
 
-Esta pasta reúne configurações, registros de execução e resultados
-do projeto de classificação de imagens OCT com poucos rótulos.
+Esta pasta reúne os registros de auditoria, configurações, resultados e informações de execução do projeto.
 
 ## Estado atual
 
-Foram concluídas a extração completa de embeddings e a seleção de
-classificadores lineares para DINOv3 ViT-L/16 e ResNet-50.
+A tabela `results/validation_summary.csv` contém **29 execuções selecionadas**:
 
-Cada modelo possui 13 configurações selecionadas:
-- Frações de 1%, 5%, 10% e 25%, com sementes 17, 42 e 2026.
-- Fração de 100%, executada uma vez para evitar repetições determinísticas.
+- 13 classificadores lineares com embeddings do DINOv3 ViT-L/16.
+- 13 classificadores lineares com embeddings da ResNet-50.
+- 3 ajustes parciais do DINOv3 em 10% do treino, nas sementes 17, 42 e 2026.
 
-Os resultados consolidados são de validação.
-A avaliação final no teste ainda está pendente.
+Para cada backbone congelado, foram executadas as frações de 1%, 5%, 10% e 25% nas três sementes. A fração de 100% foi executada uma vez para evitar repetições determinísticas.
 
-O piloto de uma época do ajuste parcial DINOv3 foi executado.
-As execuções principais do ajuste parcial ainda não estão consolidadas
-nesta tabela.
+No ajuste parcial, foram comparadas duas taxas de aprendizado por semente, totalizando seis treinamentos candidatos e três configurações selecionadas.
+
+**Os resultados consolidados são de validação. A avaliação final no teste ainda está pendente.**
+
+Os resultados de RETFound, ViT supervisionado e CNN simples ainda não estão documentados neste conjunto de arquivos.
 
 ## Dados utilizados
 
-O manifesto revisado contém 23.850 imagens:
+O manifesto adotado contém 23.850 imagens:
 
 | Divisão | Imagens |
 |---|---:|
 | Treino | 18.260 |
 | Validação | 2.793 |
 | Teste | 2.797 |
+| Total | 23.850 |
 
 SHA-256 do manifesto:
 
@@ -37,8 +39,7 @@ Ordem das classes:
 
 `AMD, CNV, CSR, DME, DR, DRUSEN, MH, NORMAL`
 
-Somente o treino é reduzido. A validação permanece fixa e utiliza
-2.793 imagens rotuladas, cujo custo de anotação também deve ser considerado.
+Somente o treino é reduzido. A validação permanece fixa e utiliza 2.793 imagens rotuladas, cujo custo de anotação também deve ser considerado.
 
 | Fração | Imagens de treino |
 |---|---:|
@@ -48,130 +49,177 @@ Somente o treino é reduzido. A validação permanece fixa e utiliza
 | 25% | 4.564 |
 | 100% | 18.260 |
 
-Os modelos reutilizam as mesmas listas de imagens para cada fração
-e semente.
+As frações são calculadas por classe sobre o treino auditado, com arredondamento para baixo. Os subconjuntos são aninhados por semente e compartilhados entre os modelos.
 
-## Protocolo dos modelos congelados
+O registro de adoção dos dados está em [docs/data_approval.md](../docs/data_approval.md).
 
-Os pesos dos backbones permanecem fixos durante a extração.
+## Modelos congelados e classificadores lineares
 
-- DINOv3: representação CLS final, com 1.024 dimensões.
-- ResNet-50: saída do global average pooling antes da camada
-  classificadora, com 2.048 dimensões.
+Os pesos dos backbones permanecem fixos durante a extração, realizada em modo de avaliação.
 
-As imagens são convertidas para RGB e redimensionadas integralmente
-para 224 × 224 com interpolação bicúbica. A normalização é específica
-de cada modelo.
+- **DINOv3:** representação CLS final, com 1.024 dimensões.
+- **ResNet-50:** saída do global average pooling antes da camada classificadora, com 2.048 dimensões.
 
-O classificador é uma regressão logística precedida de StandardScaler.
-O scaler é ajustado exclusivamente no subconjunto de treino da execução.
+As imagens são convertidas para RGB e redimensionadas integralmente para 224 × 224 pixels, com interpolação bicúbica e sem recorte. A normalização é específica de cada modelo.
 
-São comparados os valores de C:
-`0.001, 0.01, 0.1, 1.0, 10.0`.
+Os embeddings são extraídos uma vez por backbone e reutilizados nas diferentes frações e sementes.
 
-A seleção utiliza macro-F1 na validação.
-Candidatos com aviso de não convergência são descartados pela rotina.
-Em caso de empate, é escolhido o menor C.
+O classificador é uma regressão logística precedida de StandardScaler. O scaler é ajustado exclusivamente no subconjunto de treino daquela execução.
 
-Os dados de teste não são usados para escolher configurações.
+Valores de regularização comparados:
 
-## Organização
+`C = [0.001, 0.01, 0.1, 1.0, 10.0]`
 
-- `embeddings/`: metadados dos modelos e configurações de extração.
-- `pilots/`: medições de desempenho e relatórios dos pilotos disponíveis.
-- `linear_probe/dinov3/`: relatórios das execuções lineares DINOv3.
-- `linear_probe/resnet50/`: relatórios das execuções lineares ResNet-50.
-- `results/validation_summary.csv`: uma linha por execução selecionada.
+A rotina utiliza solver `lbfgs` e limite de 1.000 iterações. Candidatos com aviso de não convergência são descartados.
 
-As subpastas das execuções preservam os identificadores de fração,
-semente e configuração.
+A seleção utiliza macro-F1 de validação. Em caso de empate, é escolhido o menor C.
+
+## Ajuste parcial do DINOv3
+
+Foram utilizadas 1.824 imagens de treino e 2.793 de validação.
+
+O ajuste alterou os dois últimos blocos do DINOv3 e a camada classificadora, totalizando 25.202.696 parâmetros treináveis de 303.137.800 parâmetros.
+
+Configuração:
+
+- Sementes: 17, 42 e 2026.
+- Taxas de aprendizado: 1e-5 e 3e-5.
+- Otimizador: AdamW.
+- Weight decay: 0,01.
+- Limite: 15 épocas.
+- Parada antecipada: cinco épocas sem melhora.
+- Batch de treino: 2.
+- Acumulação de gradientes: 8 passos.
+- Batch efetivo nominal: 16.
+- Batch de validação: 8.
+- Precisão mista.
+- Sem aumentos de dados.
+
+As imagens são processadas novamente durante o ajuste. Os embeddings extraídos com os pesos congelados não são reutilizados nessa etapa.
+
+A melhor época de cada treinamento e a taxa selecionada são determinadas pelo macro-F1 de validação. Em caso de empate entre taxas, é escolhida a menor.
+
+| Semente | Taxa selecionada | Épocas executadas | Melhor época | Macro-F1 de validação |
+|---|---:|---:|---:|---:|
+| 17 | 3e-5 | 13 | 8 | 0,919664 |
+| 42 | 3e-5 | 15 | 15 | 0,927597 |
+| 2026 | 3e-5 | 12 | 7 | 0,928251 |
+
+A execução selecionada da semente 42 melhorou na última época disponível. Portanto, o limite de 15 épocas deve ser registrado como uma limitação.
+
+## Comparação em 10% do treino
+
+A comparação abaixo utiliza as mesmas sementes e amostras de treino.
+
+| Método | Macro-F1 médio de validação | Desvio-padrão amostral |
+|---|---:|---:|
+| DINOv3 congelado + classificador linear | 0,8854 | 0,0079 |
+| DINOv3 com ajuste parcial | 0,9252 | 0,0048 |
+
+O ganho médio observado foi de aproximadamente **3,97 pontos percentuais**.
+
+Esses resultados foram utilizados na seleção das configurações. A comparação final deverá ser realizada no teste após o encerramento das escolhas experimentais.
+
+O desvio-padrão entre sementes descreve a variação das execuções e não representa automaticamente um intervalo de confiança.
+
+## Organização dos arquivos
+
+Os caminhos abaixo são relativos a esta pasta.
+
+| Caminho | Conteúdo |
+|---|---|
+| `data_audit/` | Auditoria, decisões de limpeza e limitações |
+| `protocol/` | Registros históricos do notebook 02 |
+| `embeddings/` | Configurações, identidade dos modelos e registros das extrações |
+| `pilots/` | Benchmarks e pilotos disponíveis |
+| `linear_probe/dinov3/` | Busca e resultados dos classificadores DINOv3 |
+| `linear_probe/resnet50/` | Busca e resultados dos classificadores ResNet-50 |
+| `partial_ft/dinov3/` | Configurações, históricos, métricas e seleção do ajuste parcial |
+| `partial_ft/dinov3/execution_metadata/seeds42_2026/` | Ambiente e protocolo das execuções recentes |
+| `results/validation_summary.csv` | Uma linha por execução selecionada |
+| `results/artifact_index.json` | Referências dos backups e checkpoints |
+
+As subpastas preservam os identificadores de fração, semente e configuração.
 
 ## Como interpretar a tabela consolidada
 
-`validation_summary.csv` contém 26 linhas, correspondentes a
-13 execuções selecionadas por modelo.
+`results/validation_summary.csv` contém 29 linhas.
 
-Macro-F1 é a métrica principal. Também são registrados accuracy,
-balanced accuracy, AUROC e recall por classe.
+A coluna `adaptation` distingue:
 
-Os valores são resultados de validação utilizados na seleção de C.
-Não devem ser apresentados como desempenho final no teste.
+- `linear_probe`: classificador treinado sobre embeddings de um backbone congelado.
+- `partial_finetuning`: ajuste parcial do backbone e da camada classificadora.
 
-Campos vazios indicam informação não disponível ou não aplicável.
-Por exemplo, melhor época não se aplica ao classificador linear.
+Nos modelos congelados, a validação seleciona C. No ajuste parcial, seleciona a taxa de aprendizado e a melhor época.
 
-Os tempos de ajuste extraídos de trials.json não incluem
-necessariamente todas as etapas de avaliação e salvamento.
+A tabela registra macro-F1, accuracy, balanced accuracy, AUROC e recall por classe, além de configurações, hashes, caminhos e informações de custo disponíveis.
 
-Para comparar modelos, parear a mesma fração e semente e conferir
-o identificador da amostra de treino.
+Campos vazios indicam informação não disponível ou não aplicável. Por exemplo, melhor época não se aplica ao classificador linear.
 
-Médias e desvios entre sementes devem ser calculados separadamente.
-O desvio-padrão entre sementes não é um intervalo de confiança.
+Os caminhos `run_path`, `metrics_path` e `predictions_path` são relativos à raiz do repositório. `source_run_path` preserva a referência da execução no pacote de origem.
 
-## Artefatos preservados fora do Git
+Os caminhos internos dos registros `selection_lock.json` permanecem relativos à estrutura original das saídas. Não devem ser reescritos apenas porque os relatórios foram reorganizados.
 
-Embeddings, classificadores treinados, checkpoints e arquivos ZIP
-são preservados fora do repositório.
+Para comparar modelos, conferir:
+
+- Fração e semente.
+- Hash do manifesto.
+- Identificadores da amostra de treino.
+- Divisão de avaliação.
+- Forma de adaptação.
+
+## Métricas e separação dos dados
+
+Macro-F1 é a medida principal. Também são calculados:
+
+- Accuracy.
+- Balanced accuracy.
+- AUROC por classe e média macro.
+- Recall por classe.
+- Matrizes de confusão em contagens e normalizadas por linha.
+
+Treino ajusta os parâmetros e a padronização. Validação escolhe configurações. Teste é reservado à avaliação final.
+
+As divisões auditadas não são perfeitamente balanceadas; portanto, accuracy e balanced accuracy não precisam coincidir exatamente.
+
+## Tempo e memória
+
+Os tempos de ajuste dos classificadores registrados em `trials.json` não incluem necessariamente avaliação e salvamento.
+
+No ajuste parcial, `selected_run_epoch_seconds` soma os tempos registrados de treino, validação e checkpoint das épocas da configuração selecionada. Não representa toda a duração da sessão nem o custo completo da busca.
+
+Para reportar o custo da busca, considerar também os candidatos não selecionados.
+
+`peak_allocated_gib` representa a memória alocada pelo PyTorch, não todo o consumo de memória da GPU.
+
+## Backups e checkpoints
+
+O índice de artefatos está em `results/artifact_index.json`.
 
 Backups de referência:
-- DINOv3: `DINOV3_extracao_completa.zip`.
-- ResNet-50: `80d6eedc8834_a305b2c7_backup (5)(2).zip`.
 
-Ambos contêm embeddings e resultados dos classificadores lineares.
+- `DINOV3_extracao_completa.zip`: embeddings e classificadores DINOv3.
+- `80d6eedc8834_a305b2c7_backup (5)(2).zip`: embeddings e classificadores ResNet-50.
+- `dinov3_partial_ft_reports.zip`: relatórios do ajuste parcial das sementes 42 e 2026; não contém os pesos ajustados.
 
-Adicionar aqui a localização efetiva de armazenamento de cada backup,
-sua versão e seu SHA-256. O nome do arquivo, sozinho, não garante
-que outra integrante consiga acessá-lo.
+As localizações externas e versões ainda precisam ser preenchidas no índice.
 
-Os caminhos em selection_lock.json são relativos à raiz do backup.
-Se os relatórios forem reorganizados no repositório, preservar
-os registros originais e documentar o mapeamento de caminhos.
+Os hashes esperados de `best.pt` foram registrados a partir dos resultados de seleção. A correspondência com os arquivos de pesos ainda precisa ser verificada.
+
+A política do projeto é preservar embeddings, classificadores serializados e checkpoints fora do Git, mantendo no repositório os relatórios e as referências necessárias para recuperá-los.
+
+Os checkpoints de ajuste parcial devem ser usados com a mesma revisão do backbone original. A retomada em uma nova sessão ainda precisa de evidência de teste concluído.
 
 ## Limitações
 
 - A separação por paciente não foi comprovada.
 - A independência em relação aos dados de pré-treinamento não foi comprovada.
-- A auditoria removeu duplicatas exatas; imagens quase duplicadas
-  não foram excluídas por essa verificação.
-- O redimensionamento integral pode alterar a proporção da imagem.
-- A geometria de processamento da ResNet-50 difere da transformação
-  oficial de seus pesos.
-- Diferenças entre modelos envolvem arquitetura, dados, escala e
-  objetivo de pré-treinamento.
-- Os resultados atuais não incluem avaliação externa.
+- A auditoria removeu duplicatas exatas, mas não verificou completamente imagens quase duplicadas.
+- O redimensionamento integral altera a proporção de imagens que não são quadradas.
+- A geometria de processamento da ResNet-50 difere da transformação oficial de seus pesos.
+- Diferenças entre modelos envolvem arquitetura, dados, escala e objetivo de pré-treinamento.
+- A semente 42 do ajuste parcial ainda melhorou no limite de épocas.
+- Os resultados disponíveis são de validação.
+- A avaliação externa ainda não foi realizada.
 
-
-
-
-
-### Ajuste parcial do DINOv3 — 10% do treino, semente 17
-
-Foram utilizadas 1.824 imagens de treino e 2.793 de validação.
-O ajuste alterou somente os dois últimos blocos do DINOv3 e a
-camada classificadora: 25.202.696 parâmetros treináveis.
-
-Foram comparadas as taxas 1e-5 e 3e-5, com limite de 15 épocas
-e parada após cinco épocas sem melhora na validação.
-
-| Taxa | Épocas executadas | Melhor época | Macro-F1 de validação |
-|---|---:|---:|---:|
-| 1e-5 | 15 | 12 | 0,902925 |
-| 3e-5 | 13 | 8 | 0,919664 |
-
-A configuração selecionada foi lr=3e-5, com o checkpoint da época 8.
-Ela apresentou accuracy de 0,920158, balanced accuracy de 0,919962
-e AUROC macro de 0,993183.
-
-DRUSEN teve o menor recall (0,772989), seguida por DME (0,851003)
-e CNV (0,853026).
-
-Os tempos registrados por época, somados, foram aproximadamente
-26,9 minutos para lr=1e-5 e 23,6 minutos para lr=3e-5.
-Esses tempos não representam toda a duração da sessão.
-
-Os resultados são de validação e correspondem a uma única semente.
-A avaliação final no teste ainda não foi executada.
-
-
-O ajuste parcial do DINOv3 em 10% do treino foi concluído nas sementes 17, 42 e 2026, com duas taxas avaliadas por semente. O macro-F1 médio de validação foi 0,9252 ± 0,0048, contra 0,8854 ± 0,0079 no modelo congelado, considerando desvio-padrão amostral. O ganho médio foi de 3,97 pontos percentuais. A semente 42 ainda melhorava ao atingir o limite de 15 épocas. Esses resultados foram usados na seleção das configurações e ainda não representam a avaliação final no teste.
+O acompanhamento geral está em [docs/status.md](../docs/status.md).

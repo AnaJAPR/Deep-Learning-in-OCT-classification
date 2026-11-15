@@ -1,0 +1,75 @@
+{
+  "manifest_sha256": "80d6eedc883410b47beeee6b1c72e72d69309ba38ac2595fc8f2590e6928103d",
+  "code_hash": "a305b2c79d6cefaf3adc60bf2452db3a57058e52092ae06970a2a63db56792ac",
+  "class_order": [
+    "AMD",
+    "CNV",
+    "CSR",
+    "DME",
+    "DR",
+    "DRUSEN",
+    "MH",
+    "NORMAL"
+  ],
+  "data_approved": true,
+  "reviewers": "Paula Eduarda de Lima",
+  "budget_reviewed": true,
+  "linear_C": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "linear_max_iter": 1000,
+  "primary_metric": "macro_f1",
+  "selection_split": "val",
+  "test_selection": false,
+  "standard_scaler_fit": "selected_train_only",
+  "ft_lrs": [
+    1e-05,
+    3e-05
+  ],
+  "ft_epochs": 15,
+  "ft_patience": 5,
+  "ft_weight_decay": 0.01,
+  "limitations": [
+    "patient_separation_unverified",
+    "pretraining_independence_unverified",
+    "near_duplicates_not_excluded",
+    "architecture_pretraining_scale_objective_confounded",
+    "whole_image_resize_distorts_aspect_ratio"
+  ],
+  "documentation_updated_on": "2026-11-15",
+  "scope": "Paula: DINOv3, ResNet-50 e ajuste parcial DINOv3 em 10%",
+  "manifest_path": "data/manifests/candidates/octc8_manifest_candidate_v1.csv",
+  "splits_registry_path": "data/splits/registry.json",
+  "train_counts": [
+    2300,
+    2257,
+    2300,
+    2272,
+    2300,
+    2233,
+    2300,
+    2298
+  ],
+  "n_train": 18260,
+  "n_val": 2793,
+  "n_test": 2797,
+  "subset_counts": {
+    "1": 180,
+    "5": 910,
+    "10": 1824,
+    "25": 4564,
+    "100": 18260
+  },
+  "rounding": "max(1,floor(class_train_n*pct/100))",
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "joint_review_evidence": "Não identificada nominalmente nos arquivos enviados; reviewers registra Paula.",
+  "source_protocol": "reports/partial_ft/dinov3/execution_metadata/seeds42_2026/protocol.json"
+}

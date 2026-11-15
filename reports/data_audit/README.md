@@ -62,11 +62,7 @@ independentes.
 - `data/manifests/candidates/octc8_manifest_candidate_v1.csv`:
   seleção candidata de 23.850 imagens.
 
-- `reports/data_audit/cleaning_proposal_v1/counts_validation_v1.csv`:
-  contagens verificadas por classe e divisão.
-
-- `reports/data_audit/cleaning_proposal_v1/split_totals_validation_v1.csv`:
-  totais verificados por divisão.
+- `reports/data_audit/cleaning_proposal_v1/counts_before_after.csv`: contagens antes e depois por classe e divisão.
 
 Os caminhos acima são relativos à raiz do repositório.
 
@@ -98,3 +94,7 @@ A limpeza alterou as divisões originais, inclusive a avaliação.
 Os resultados devem ser descritos como obtidos na versão auditada
 do OCT-C8, com essas contagens e critérios de seleção.
 
+
+## Status posterior à auditoria
+
+A seleção candidata foi adotada nos experimentos de Paula sem mudança de conteúdo. Ver `docs/data_approval.md` e `configs/protocol_current.json` na raiz do repositório. Os relatórios da auditoria descrevem o momento em que foram gerados e permanecem preservados.

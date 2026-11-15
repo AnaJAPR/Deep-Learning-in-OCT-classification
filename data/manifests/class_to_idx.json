@@ -1,0 +1,10 @@
+{
+  "AMD": 0,
+  "CNV": 1,
+  "CSR": 2,
+  "DME": 3,
+  "DR": 4,
+  "DRUSEN": 5,
+  "MH": 6,
+  "NORMAL": 7
+}
