@@ -1,0 +1,17 @@
+image_id,relative_path,split,class_name,class_id
+9f612e696b9754ea7a03,RetinalOCT_Dataset/RetinalOCT_Dataset/train/AMD/amd_train_3139.jpg,train,AMD,0
+660872559fc11749e317,RetinalOCT_Dataset/RetinalOCT_Dataset/train/AMD/amd_train_2697.jpg,train,AMD,0
+5ed89053187dcd300791,RetinalOCT_Dataset/RetinalOCT_Dataset/train/CNV/cnv_train_2243.jpg,train,CNV,1
+2b02b31548ffc4a4c906,RetinalOCT_Dataset/RetinalOCT_Dataset/train/CNV/cnv_train_2498.jpg,train,CNV,1
+0ad93d6c20f0655abf5d,RetinalOCT_Dataset/RetinalOCT_Dataset/train/CSR/csr_train_2187.jpg,train,CSR,2
+9625e547486463b71163,RetinalOCT_Dataset/RetinalOCT_Dataset/train/CSR/csr_train_1716.jpg,train,CSR,2
+a2bfd110f8a54f3b3c88,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DME/dme_train_3213.jpg,train,DME,3
+9a244ab4efeed3f73d05,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DME/dme_train_2140.jpg,train,DME,3
+1c8a6060680f08d2f577,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DR/dr_train_1452.jpg,train,DR,4
+9b266743a51c932d3a6e,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DR/dr_train_1111.jpg,train,DR,4
+b7eb9993e709bb9c4e91,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DRUSEN/drusen_train_2020.jpg,train,DRUSEN,5
+8e62f0649fec061c8fbe,RetinalOCT_Dataset/RetinalOCT_Dataset/train/DRUSEN/drusen_train_2574.jpg,train,DRUSEN,5
+87ddd828b6c044d34de0,RetinalOCT_Dataset/RetinalOCT_Dataset/train/MH/mh_train_2719.jpg,train,MH,6
+7aa7d7aca3e366546a0b,RetinalOCT_Dataset/RetinalOCT_Dataset/train/MH/mh_train_2034.jpg,train,MH,6
+b198877eeb0fe87ac297,RetinalOCT_Dataset/RetinalOCT_Dataset/train/NORMAL/normal_train_3055.jpg,train,NORMAL,7
+37ec321ccd10de4294b3,RetinalOCT_Dataset/RetinalOCT_Dataset/train/NORMAL/normal_train_2301.jpg,train,NORMAL,7

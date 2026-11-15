@@ -1,0 +1,152 @@
+[
+  {
+    "epoch": 1,
+    "loss": 1.8375910708778782,
+    "val_macro_f1": 0.5717595171783105,
+    "train_seconds": 159.48524249700006,
+    "validation_seconds": 203.55316291999998,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.3027465840000332
+  },
+  {
+    "epoch": 2,
+    "loss": 1.2716569733201413,
+    "val_macro_f1": 0.660968414724679,
+    "train_seconds": 50.29730177399995,
+    "validation_seconds": 55.957143643999984,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4234974170000214
+  },
+  {
+    "epoch": 3,
+    "loss": 0.9218199545877022,
+    "val_macro_f1": 0.7257813621605449,
+    "train_seconds": 50.85242267000001,
+    "validation_seconds": 56.24183765099997,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.41004255000007106
+  },
+  {
+    "epoch": 4,
+    "loss": 0.7081819082561293,
+    "val_macro_f1": 0.8147777122456699,
+    "train_seconds": 50.41633626999999,
+    "validation_seconds": 55.98825534899993,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4097369979999712
+  },
+  {
+    "epoch": 5,
+    "loss": 0.532821818401939,
+    "val_macro_f1": 0.8470834203573706,
+    "train_seconds": 50.66235736899989,
+    "validation_seconds": 57.42689886699986,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.43178426800000125
+  },
+  {
+    "epoch": 6,
+    "loss": 0.4027070371728194,
+    "val_macro_f1": 0.870778214445161,
+    "train_seconds": 50.937260874,
+    "validation_seconds": 57.160903411999925,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.42329761799987864
+  },
+  {
+    "epoch": 7,
+    "loss": 0.30940740986874227,
+    "val_macro_f1": 0.8898489547622324,
+    "train_seconds": 51.08293098199988,
+    "validation_seconds": 57.429683722999926,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.42742728000007446
+  },
+  {
+    "epoch": 8,
+    "loss": 0.2414777864489639,
+    "val_macro_f1": 0.8958436844638044,
+    "train_seconds": 51.432777945,
+    "validation_seconds": 56.55828602999986,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4072212329999729
+  },
+  {
+    "epoch": 9,
+    "loss": 0.18768345054827237,
+    "val_macro_f1": 0.9059483379213416,
+    "train_seconds": 50.9549242380001,
+    "validation_seconds": 56.50286495199998,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4163272319999578
+  },
+  {
+    "epoch": 10,
+    "loss": 0.14539859378547,
+    "val_macro_f1": 0.9139894371448868,
+    "train_seconds": 50.52569441700007,
+    "validation_seconds": 56.332488312999885,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4140235960001064
+  },
+  {
+    "epoch": 11,
+    "loss": 0.11208777992348921,
+    "val_macro_f1": 0.9141950043001441,
+    "train_seconds": 50.501673438000125,
+    "validation_seconds": 56.08247355799995,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.41516642800002046
+  },
+  {
+    "epoch": 12,
+    "loss": 0.08504362691912734,
+    "val_macro_f1": 0.9190203813020769,
+    "train_seconds": 49.93511891100002,
+    "validation_seconds": 56.117466539999896,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4083516260000124
+  },
+  {
+    "epoch": 13,
+    "loss": 0.06469058049352545,
+    "val_macro_f1": 0.9207222063611438,
+    "train_seconds": 49.93364327199993,
+    "validation_seconds": 55.535421972999984,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": true,
+    "checkpoint_seconds": 0.4073356609997063
+  },
+  {
+    "epoch": 14,
+    "loss": 0.04738061103904456,
+    "val_macro_f1": 0.9172189629662715,
+    "train_seconds": 49.9371671240001,
+    "validation_seconds": 55.52747983399968,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": false,
+    "checkpoint_seconds": 0.3737977279997722
+  },
+  {
+    "epoch": 15,
+    "loss": 0.03436720946378875,
+    "val_macro_f1": 0.9195057164702116,
+    "train_seconds": 49.932256165000126,
+    "validation_seconds": 55.65343141400035,
+    "peak_allocated_gib": 1.5293231010437012,
+    "improved": false,
+    "checkpoint_seconds": 0.373245119999865
+  }
+]

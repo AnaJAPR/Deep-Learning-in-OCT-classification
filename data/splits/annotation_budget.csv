@@ -1,0 +1,6 @@
+percent,train_labels,validation_labels,train_plus_validation
+1,180,2793,2973
+5,910,2793,3703
+10,1824,2793,4617
+25,4564,2793,7357
+100,18260,2793,21053

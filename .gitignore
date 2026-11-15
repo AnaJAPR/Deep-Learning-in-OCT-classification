@@ -1,5 +1,7 @@
 # Dados e artefatos locais
-/data/
+/data/raw/
+/data/processed/
+/data/cache/
 /artifacts/
 /cache/
 /outputs/

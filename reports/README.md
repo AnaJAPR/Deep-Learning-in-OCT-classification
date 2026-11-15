@@ -172,3 +172,6 @@ Esses tempos não representam toda a duração da sessão.
 
 Os resultados são de validação e correspondem a uma única semente.
 A avaliação final no teste ainda não foi executada.
+
+
+O ajuste parcial do DINOv3 em 10% do treino foi concluído nas sementes 17, 42 e 2026, com duas taxas avaliadas por semente. O macro-F1 médio de validação foi 0,9252 ± 0,0048, contra 0,8854 ± 0,0079 no modelo congelado, considerando desvio-padrão amostral. O ganho médio foi de 3,97 pontos percentuais. A semente 42 ainda melhorava ao atingir o limite de 15 épocas. Esses resultados foram usados na seleção das configurações e ainda não representam a avaliação final no teste.
