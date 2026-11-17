@@ -66,7 +66,7 @@ O pacote esperado por `verify_lists` contém `manifest_used.csv` e `data/splits/
 
 O notebook 03 exporta módulos embutidos. Ao editar o código, mantenha essa cópia e `src/` sincronizados. Alterações de código/configuração podem mudar os identificadores das execuções; não altere os hashes históricos manualmente.
 
-## Modelos de Paula
+## Modelos (Paula)
 
 DINOv3 usa `facebook/dinov3-vitl16-pretrain-lvd1689m`, revisão `ea8dc2863c51be0a264bab82070e3e8836b02d51`, vetor CLS final de 1.024 dimensões. ResNet-50 usa `ResNet50_Weights.IMAGENET1K_V2`, global average pooling antes da FC, com 2.048 dimensões. Metadados completos em `reports/embeddings/`.
 
@@ -78,6 +78,3 @@ Imagens são convertidas para RGB e redimensionadas integralmente para 224 × 22
 
 Consulte [reports/README.md](reports/README.md). Os resultados disponíveis são de validação. Não foi comprovada separação por paciente nem independência dos dados de pré-treinamento. A auditoria remove duplicatas exatas, mas não garante ausência de imagens quase duplicadas. Diferenças de arquitetura, escala e objetivo de pré-treinamento também afetam a comparação.
 
-## Próximas entregas
-
-Integrar resultados de Ana Júlia, encerrar as escolhas, avaliar no teste, consolidar figuras e preparar relatório/slides para 24/11/2026. Acompanhar em [docs/status.md](docs/status.md).
