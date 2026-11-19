@@ -15,3 +15,9 @@ A limpeza excluiu 138 cópias excedentes e colocou 12 imagens com conflito de r�
 Antes da avaliação final conjunta, Ana Júlia deve confirmar o uso da mesma seleção e registrar sua revisão efetiva. Não é necessário regenerar listas se dados e decisões permanecerem idênticos.
 
 Pacientes, independência do pré-treinamento e ausência de quase duplicatas não foram comprovados.
+
+## Revisão documental em 19/11/2026
+
+O manifesto e seus bytes foram novamente conferidos: o SHA-256 acima permanece correto. Nenhuma nova aprovação de Ana Júlia é atribuída por esta atualização.
+
+**Revisão nominal de Ana Júlia: ainda não registrada.** Quando realizada, acrescentar data real, nome da revisora, hash conferido, listas utilizadas, verificações realizadas e decisão. Não preencher retroativamente nem alterar os registros históricos provisórios. A revisão conjunta deve confirmar o uso da mesma seleção nos modelos de ambas.

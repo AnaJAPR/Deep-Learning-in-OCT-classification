@@ -1,0 +1,43 @@
+{
+  "manifest_sha256": "80d6eedc883410b47beeee6b1c72e72d69309ba38ac2595fc8f2590e6928103d",
+  "code_hash": "a305b2c79d6cefaf3adc60bf2452db3a57058e52092ae06970a2a63db56792ac",
+  "class_order": [
+    "AMD",
+    "CNV",
+    "CSR",
+    "DME",
+    "DR",
+    "DRUSEN",
+    "MH",
+    "NORMAL"
+  ],
+  "data_approved": true,
+  "reviewers": "Paula Eduarda de Lima",
+  "budget_reviewed": true,
+  "linear_C": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "linear_max_iter": 1000,
+  "primary_metric": "macro_f1",
+  "selection_split": "val",
+  "test_selection": false,
+  "standard_scaler_fit": "selected_train_only",
+  "ft_lrs": [
+    1e-05,
+    3e-05
+  ],
+  "ft_epochs": 15,
+  "ft_patience": 5,
+  "ft_weight_decay": 0.01,
+  "limitations": [
+    "patient_separation_unverified",
+    "pretraining_independence_unverified",
+    "near_duplicates_not_excluded",
+    "architecture_pretraining_scale_objective_confounded",
+    "whole_image_resize_distorts_aspect_ratio"
+  ]
+}

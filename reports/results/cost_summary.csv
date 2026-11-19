@@ -1,0 +1,6 @@
+model,stage,seconds,records
+dinov3,extraction_recorded_call,1936.2710618729998,1
+dinov3,linear_search_fit,270.4728288669903,13
+dinov3,partial_ft_candidate,9471.931357810008,6
+resnet50,extraction_recorded_call,1025.1531221239998,1
+resnet50,linear_search_fit,489.0725753590036,13

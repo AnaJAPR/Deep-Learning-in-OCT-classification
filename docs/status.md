@@ -1,19 +1,28 @@
-# Acompanhamento — 15/11/2026
+# Acompanhamento — 19/11/2026
 
-| Tarefa | Estado comprovado nos arquivos |
+| Tarefa | Estado |
 |---|---|
-| Auditoria, limpeza e listas | Concluídas; aprovação de Paula registrada |
-| DINOv3 e ResNet-50 congelados | Extrações e 26 seleções lineares concluídas |
-| Ajuste parcial DINOv3 10% | Três sementes concluídas; seis candidatos |
-| Código compartilhado de métricas | Implementado, com testes sintéticos |
-| Salvamento de checkpoints | Implementado e registrado |
-| Retomada em sessão nova | Ainda sem evidência de teste concluído |
-| Revisão nominal de Ana Júlia | A registrar quando realizada |
-| RETFound, ViT e CNN | Resultados não presentes no pacote revisado; confirmar com Ana Júlia |
-| Teste final | Pendente |
-| OCTDL e ajuste parcial em 1% | Não executados nos arquivos revisados |
-| Figuras finais, relatório e slides | A consolidar |
+| Auditoria, seleção de dados e listas | Concluídas; aprovação de Paula registrada |
+| DINOv3 e ResNet-50 congelados | 26 seleções lineares e avaliações finais concluídas |
+| DINOv3 parcial em 10% | Seis candidatos; três selecionados e avaliados no teste |
+| Tabelas | 29 linhas de validação e 29 de teste, separadas |
+| Figuras | Curva, comparação pareada e 29 matrizes, PNG/PDF |
+| Verificação dos testes | Métricas e matrizes recalculadas das previsões na revisão do pacote de 19/11 |
+| Checkpoints para inferência | Recuperação relatada e avaliações finais disponíveis; pesos externos |
+| Retomada com otimizador | Não demonstrada nos registros revisados |
+| Custos e erros | Consolidados em reports/results/ e interpretados em reports/interpretation.md |
+| Revisão de Ana Júlia | Pendente de registro nominal real |
+| RETFound, ViT e CNN | Resultados não integrados neste pacote |
+| OCTDL | Sem artefatos comprobatórios; fora dos resultados desta entrega documental |
+| Fine-tuning em 1% | Não executado nos resultados disponíveis |
+| Artigo | Versão com testes produzida separadamente; integrar versão final ou referência |
+| Slides e ensaios | Pendentes de confirmação |
 
-No planejamento, substituir totais antigos por treino 18.260, validação 2.793 e teste 2.797; frações 180/910/1.824/4.564/18.260. Não exigir igualdade exata de accuracy e balanced accuracy no teste auditado. Separar tarefas de Paula das revisões e execuções da colega.
+## Próximas ações
 
-O planejamento previa encerrar experimentos em 15/11 e apresentar em 24/11. Priorizar recuperação dos checkpoints, integração do núcleo DINOv3/RETFound/ResNet-50 e avaliação final, seguida de curvas por fração, comparação pareada, matrizes, custos, relatório e slides. Qualquer mudança de prazo ou escopo deve ser registrada pela dupla.
+1. Aplicar a atualização, conferir `git diff` e versionar relatórios extraídos, incluindo ResNet-50.
+2. Preencher no índice as localizações duráveis e versões dos backups que ainda estão desconhecidas.
+3. Integrar resultados de Ana Júlia e conferir amostras, classes, seleção e avaliador.
+4. Revisar interpretação, artigo, slides e ensaiar para 24/11.
+
+Não repetir treinamentos para regenerar figuras. Não ajustar configurações pelos resultados de teste. A ausência de arquivos OCTDL não prova que o experimento nunca ocorreu; impede tratá-lo como resultado comprovado neste repositório.

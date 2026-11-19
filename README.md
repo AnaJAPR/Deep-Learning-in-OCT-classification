@@ -6,12 +6,12 @@ Paula Eduarda de Lima e Ana Júlia Amaro Pereira Rocha.
 
 Investigamos se representações gerais do DINOv3 podem igualar ou superar RETFound OCT, especializado em retina, quando há poucos exemplos rotulados de treino.
 
-## Estado documentado em 15/11/2026
+## Estado documentado em 19/11/2026
 
 - DINOv3 ViT-L/16 e ResNet-50: extração completa e 13 classificadores lineares selecionados por modelo.
 - DINOv3: ajuste parcial em 10% do treino nas sementes 17, 42 e 2026; duas taxas por semente.
-- Tabela consolidada: 29 resultados selecionados de validação.
-- Avaliação final no teste e resultados dos modelos de Ana Júlia: ainda não documentados neste conjunto de arquivos.
+- Tabelas separadas: 29 resultados selecionados de validação e 29 avaliações finais de teste.
+- Teste de Paula concluído: 13 avaliações DINOv3 linear, 13 ResNet-50 linear e três ajustes parciais DINOv3. Resultados de Ana Júlia ainda não integrados.
 - Ajuste parcial em 1% e OCTDL: extensões não executadas nos relatórios disponíveis.
 
 ## Dados e protocolo
@@ -50,6 +50,7 @@ Treino ajusta os modelos e o StandardScaler. Validação seleciona configuraçõ
 | `reports/partial_ft/` | Ajuste parcial, históricos e seleção |
 | `reports/results/` | Tabela por execução e índice de artefatos |
 | `figures/` | Exemplos de imagens já presentes |
+| `reports/figures/` | Curva por fração, comparação pareada e 29 matrizes, em PNG e PDF |
 
 Pastas planejadas só devem ser anunciadas como implementadas quando contiverem arquivos. Pesos, embeddings, ZIPs e classificadores serializados ficam fora do Git.
 
@@ -76,5 +77,22 @@ Imagens são convertidas para RGB e redimensionadas integralmente para 224 × 22
 
 ## Resultados e limitações
 
-Consulte [reports/README.md](reports/README.md). Os resultados disponíveis são de validação. Não foi comprovada separação por paciente nem independência dos dados de pré-treinamento. A auditoria remove duplicatas exatas, mas não garante ausência de imagens quase duplicadas. Diferenças de arquitetura, escala e objetivo de pré-treinamento também afetam a comparação.
+Consulte [reports/README.md](reports/README.md). Os resultados de teste usam 2.797 imagens e configurações escolhidas exclusivamente na validação. Não foi comprovada separação por paciente nem independência dos dados de pré-treinamento. A auditoria remove duplicatas exatas, mas não garante ausência de imagens quase duplicadas. Diferenças de arquitetura, escala e objetivo de pré-treinamento também afetam a comparação.
 
+
+## Análise local em CPU
+
+Instale `pandas`, `numpy`, `matplotlib` e um ambiente Jupyter. Execute `notebooks/04_analise_resultados_teste.ipynb` em ordem. Não são necessários GPU, imagens OCT ou checkpoints para gerar as figuras a partir dos resultados.
+
+Para organizar relatórios e consolidar custos/erros, na raiz:
+
+```bash
+python scripts/organizar_resultados.py
+python scripts/consolidar_custos_erros.py
+```
+
+O primeiro script copia os relatórios de teste para as pastas canônicas, preserva originais e bloqueia conflitos. Requer os relatórios já extraídos ou seus ZIPs dentro de `reports/`. O segundo usa os relatórios organizados e históricos, sem treinar modelos.
+
+Resultados: DINOv3 congelado com 100% atinge macro-F1 0,9277 contra 0,9017 da ResNet-50. Em 10%, DINOv3 passa de 0,8870 para 0,9245 com ajuste parcial, ganho médio pareado de 3,75 p.p. Não há conclusão DINOv3 versus RETFound sem seus resultados.
+
+Consulte `reports/interpretation.md` e `docs/octdl_status.md`. A revisão nominal de Ana Júlia e a retomada do treinamento com otimizador permanecem sem comprovação documental. Recuperação para inferência já foi relatada na avaliação final.

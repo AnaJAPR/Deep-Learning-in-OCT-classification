@@ -1,0 +1,35 @@
+model,stage,run,seconds,source,scope,selected,peak_allocated_gib
+dinov3,extraction_recorded_call,dinov3,1936.2710618729998,reports/embeddings/dinov3/complete.json,"new=94; reused=0; duração da chamada registrada, não necessariamente de todas as sessões",,
+dinov3,linear_search_fit,p01_seed17_9915224d,1.8534337069986577,reports/linear_probe/dinov3/p01_seed17_9915224d/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p10_seed2026_587ccae4,11.48055546499927,reports/linear_probe/dinov3/p10_seed2026_587ccae4/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p10_seed42_e4ec4b00,7.566427838000891,reports/linear_probe/dinov3/p10_seed42_e4ec4b00/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p25_seed2026_7e43ea38,24.394178901999112,reports/linear_probe/dinov3/p25_seed2026_7e43ea38/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p01_seed2026_beaabde6,2.2875796589996753,reports/linear_probe/dinov3/p01_seed2026_beaabde6/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p05_seed2026_3cf8fdae,5.643503164999856,reports/linear_probe/dinov3/p05_seed2026_3cf8fdae/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p10_seed17_19ae811f,7.830650653999328,reports/linear_probe/dinov3/p10_seed17_19ae811f/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p05_seed42_5210fe82,7.523233505999087,reports/linear_probe/dinov3/p05_seed42_5210fe82/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p01_seed42_da792e21,1.9947632399989743,reports/linear_probe/dinov3/p01_seed42_da792e21/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p25_seed42_e60e6057,29.651609217999066,reports/linear_probe/dinov3/p25_seed42_e60e6057/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p100_seed17_297d3318,136.855112637998,reports/linear_probe/dinov3/p100_seed17_297d3318/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p05_seed17_7c0ab84c,5.570613284999126,reports/linear_probe/dinov3/p05_seed17_7c0ab84c/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,linear_search_fit,p25_seed17_d03cd0fd,27.821167589999277,reports/linear_probe/dinov3/p25_seed17_d03cd0fd/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,extraction_recorded_call,resnet50,1025.1531221239998,reports/embeddings/resnet50/complete.json,"new=94; reused=0; duração da chamada registrada, não necessariamente de todas as sessões",,
+resnet50,linear_search_fit,p01_seed42_f08f68f4,4.853044300999954,reports/linear_probe/resnet50/p01_seed42_f08f68f4/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p10_seed17_f71e9c8b,27.416037121000045,reports/linear_probe/resnet50/p10_seed17_f71e9c8b/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p01_seed17_633e8776,9.966372435000721,reports/linear_probe/resnet50/p01_seed17_633e8776/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p10_seed42_c1161c2c,33.81453471300074,reports/linear_probe/resnet50/p10_seed42_c1161c2c/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p100_seed17_096a93c4,167.3029502940003,reports/linear_probe/resnet50/p100_seed17_096a93c4/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p05_seed42_de22b880,19.861459009999635,reports/linear_probe/resnet50/p05_seed42_de22b880/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p25_seed42_6d1b5df8,55.21263619000001,reports/linear_probe/resnet50/p25_seed42_6d1b5df8/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p25_seed2026_9e6f58a3,53.83210840500078,reports/linear_probe/resnet50/p25_seed2026_9e6f58a3/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p05_seed17_d814a681,18.876312587999564,reports/linear_probe/resnet50/p05_seed17_d814a681/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p10_seed2026_560f4cf8,23.75675588700051,reports/linear_probe/resnet50/p10_seed2026_560f4cf8/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p25_seed17_68fcd30f,56.277103414000976,reports/linear_probe/resnet50/p25_seed17_68fcd30f/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p01_seed2026_05455296,5.962592480000694,reports/linear_probe/resnet50/p01_seed2026_05455296/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+resnet50,linear_search_fit,p05_seed2026_8da110b8,11.94066852099968,reports/linear_probe/resnet50/p05_seed2026_8da110b8/trials.json,"5 candidatos; soma seconds, não duração integral da sessão",,
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed2026/49b315b4a4f2fcd8,1717.027722361002,reports/partial_ft/dinov3/p10_seed2026/49b315b4a4f2fcd8/history.json,15 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,False,1.5322604179382324
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed2026/37cab648d58cfde3,1268.1308166440049,reports/partial_ft/dinov3/p10_seed2026/37cab648d58cfde3/history.json,12 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,True,1.5322604179382324
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed17/d60b2d045d8cfe52,1416.3805062259999,reports/partial_ft/dinov3/p10_seed17/d60b2d045d8cfe52/history.json,13 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,True,1.5322604179382324
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed17/7a1398e7ca882661,1615.3578314690012,reports/partial_ft/dinov3/p10_seed17/7a1398e7ca882661/history.json,15 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,False,1.5322604179382324
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed42/5babfe3108bf070f,1590.035573645001,reports/partial_ft/dinov3/p10_seed42/5babfe3108bf070f/history.json,15 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,True,1.5322604179382324
+dinov3,partial_ft_candidate,partial_ft/dinov3/p10_seed42/6ac74ba1a82b1196,1864.9989074649989,reports/partial_ft/dinov3/p10_seed42/6ac74ba1a82b1196/history.json,15 épocas; treino+validação+checkpoint; exclui carregamento e avaliação final,False,1.5293231010437012
